@@ -4,11 +4,15 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 @Component({
     selector: 'app-components',
     templateUrl: './components.component.html',
-    styles: [`
-    ngb-progressbar {
-        margin-top: 5rem;
-    }
-    `]
+    styleUrls: ['./components.component.scss'],
+    // styles: [`
+    // ngb-progressbar {
+    //     margin-top: 5rem;
+    // },
+    // association{
+    //     backgroundcolor:green
+    // }
+    // `]
 })
 
 export class ComponentsComponent implements OnInit {
