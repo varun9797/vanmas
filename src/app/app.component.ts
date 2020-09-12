@@ -50,6 +50,9 @@ export class AppComponent implements OnInit {
         }
 
     }
+    closeTerminal(){
+        this.navbar.sidebarClose();
+    }
     removeFooter() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
         titlee = titlee.slice( 1 );
