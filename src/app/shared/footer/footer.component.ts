@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import{ CommonService } from './../common.service'
 
 @Component({
     selector: 'app-footer',
@@ -8,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
     test : Date = new Date();
 
-    constructor() { }
+    constructor(public commonService:CommonService) { }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.commonService.currentData.subscribe(currentData => this.showFooter())
+   }
+
+    showFooter(){
+        let el = document.getElementById('footNav');
+        el.scrollIntoView();
+
+    }
+
 }

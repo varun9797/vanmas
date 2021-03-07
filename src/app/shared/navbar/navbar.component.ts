@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef,ViewChild } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import{ CommonService } from './../common.service'
 
 @Component({
     selector: 'app-navbar',
@@ -9,11 +10,13 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
-
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element : ElementRef, public commonService:CommonService) {
         this.sidebarVisible = false;
     }
 
+    goToFooter(){
+        this.commonService.callFooter("dummy");
+    }
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
